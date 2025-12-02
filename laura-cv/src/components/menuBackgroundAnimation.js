@@ -3,13 +3,20 @@ import { Noise } from "noisejs";
 
 export default function MenuBackgroundAnimation() {
   const canvasRef = useRef(null);
+  const animationFrameIdRef = useRef(null);
+  const isMountedRef = useRef(true);
 
   useEffect(() => {
     const noise = new Noise(Math.random());
     const canvas = canvasRef.current;
+    
+    if (!canvas) return;
+    
     const ctx = canvas.getContext("2d");
+    isMountedRef.current = true;
 
     const resize = () => {
+      if (!isMountedRef.current || !canvas) return;
       const container = canvas.parentElement;
       if (container) {
         canvas.width = container.clientWidth;
@@ -29,10 +36,6 @@ export default function MenuBackgroundAnimation() {
     if (container) {
       resizeObserver.observe(container);
     }
-    
-    // Store references for cleanup
-    const cleanupResizeObserver = resizeObserver;
-    const cleanupContainer = container;
 
     let nt = 0;
     let params = {
@@ -50,11 +53,14 @@ export default function MenuBackgroundAnimation() {
     }
 
     function clear() {
+      if (!isMountedRef.current || !canvas) return;
       ctx.fillStyle = "rgba(0,0,0,1)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 
     function draw() {
+      if (!isMountedRef.current || !canvas) return;
+      
       const { noiseSpeed, noiseScale, dotSize, gap, hueBase, hueRange, shape } =
         params;
 
@@ -102,17 +108,30 @@ export default function MenuBackgroundAnimation() {
     }
 
     function render() {
+      if (!isMountedRef.current) return;
+      
       clear();
       draw();
-      requestAnimationFrame(render);
+      animationFrameIdRef.current = requestAnimationFrame(render);
     }
 
     render();
 
     return () => {
+      isMountedRef.current = false;
+      
+      // Cancel the animation frame
+      if (animationFrameIdRef.current !== null) {
+        cancelAnimationFrame(animationFrameIdRef.current);
+        animationFrameIdRef.current = null;
+      }
+      
+      // Remove event listeners
       window.removeEventListener("resize", resize);
-      if (cleanupResizeObserver && cleanupContainer) {
-        cleanupResizeObserver.unobserve(cleanupContainer);
+      
+      // Clean up ResizeObserver
+      if (resizeObserver && container) {
+        resizeObserver.unobserve(container);
       }
     };
   }, []);
