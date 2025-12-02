@@ -60,7 +60,7 @@ export default function NavigationMenu() {
                     onClick={() => setIsMenuOpen(false)}
                 >
                     <h1 className="ps-5">About</h1>
-                    <img className="pe-5" src={arrowLeftIcon} alt="arrow left" />
+                    <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
                 </Link>
                 <Link 
                     to="/gallery" 
@@ -68,7 +68,7 @@ export default function NavigationMenu() {
                     onClick={() => setIsMenuOpen(false)}
                 >
                     <h1 className="ps-5">Gallery</h1>
-                    <img className="pe-5" src={arrowLeftIcon} alt="arrow left" />
+                    <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
                 </Link>
                 <Link 
                     to="/contact" 
@@ -76,7 +76,7 @@ export default function NavigationMenu() {
                     onClick={() => setIsMenuOpen(false)}    
                 >
                     <h1 className="ps-5">Contact</h1>
-                    <img className="pe-5" src={arrowLeftIcon} alt="arrow left" />
+                    <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
                 </Link>
             </div>
         </div>
