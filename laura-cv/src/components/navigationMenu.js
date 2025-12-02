@@ -23,7 +23,7 @@ export default function NavigationMenu() {
                     <img 
                         className="p-2 menu-toggle-icon" 
                         src={closeIcon} 
-                        alt="close menu" 
+                        alt="close menu"
                         onClick={toggleMenu}
                     />
                 ) : (
@@ -35,31 +35,50 @@ export default function NavigationMenu() {
                     />
                 )}
                 <div className="d-flex align-items-center ms-auto">
-                    <img className="p-2" src={speechBubble} alt="speech bubble icon"/>
-                    <p>In Finnish</p>
-                    <img className="p-2" src={letter} alt="letter icon"/>
-                    <p>Contact</p>
+                    <div className="localicationLink px-3">
+                        <Link to="/contact" className="d-flex align-items-center pl-5">
+                            <img src={speechBubble} alt="speech bubble icon"/>
+                            <p className="ps-3">In Finnish</p>
+                        </Link>
+                    </div>
+                    <div/>
+                    <div className="contactLink px-4">
+                        <Link to="/contact" className="d-flex align-items-center pl-5">
+                            <img src={letter} alt="letter icon"/>
+                            <p className="ps-3">Contact</p>
+                        </Link>
+                    </div>
                 </div>
             </div>
-            {isMenuOpen && (
-                <>
-                    <div className="menuBackgroundAnimation">
-                        <MenuBackgroundAnimation />
-                    </div>
-                    <Link to="/about" className="menuLink d-flex align-items-center justify-content-between text-decoration-none">
-                        <h1 className="ps-5">About</h1>
-                        <img className="pe-5" src={arrowLeftIcon} alt="arrow left" />
-                    </Link>
-                    <Link to="/gallery" className="menuLink d-flex align-items-center justify-content-between text-decoration-none">
-                        <h1 className="ps-5">Gallery</h1>
-                        <img className="pe-5" src={arrowLeftIcon} alt="arrow left" />
-                    </Link>
-                    <Link to="/contact" className="menuLink d-flex align-items-center justify-content-between text-decoration-none">
-                        <h1 className="ps-5">Contact</h1>
-                        <img className="pe-5" src={arrowLeftIcon} alt="arrow left" />
-                    </Link>
-                </>
-            )}
+            <div className={`menuContainer ${isMenuOpen ? 'menuOpen' : 'menuClosed'}`}>
+                <div className="menuBackgroundAnimation">
+                    <MenuBackgroundAnimation />
+                </div>
+                <Link 
+                    to="/about" 
+                    className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
+                    onClick={() => setIsMenuOpen(false)}
+                >
+                    <h1 className="ps-5">About</h1>
+                    <img className="pe-5" src={arrowLeftIcon} alt="arrow left" />
+                </Link>
+                <Link 
+                    to="/gallery" 
+                    className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
+                    onClick={() => setIsMenuOpen(false)}
+                >
+                    <h1 className="ps-5">Gallery</h1>
+                    <img className="pe-5" src={arrowLeftIcon} alt="arrow left" />
+                </Link>
+                <Link 
+                    to="/contact" 
+                    className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
+                    onClick={() => setIsMenuOpen(false)}    
+                >
+                    <h1 className="ps-5">Contact</h1>
+                    <img className="pe-5" src={arrowLeftIcon} alt="arrow left" />
+                </Link>
+            </div>
         </div>
     );
 }
