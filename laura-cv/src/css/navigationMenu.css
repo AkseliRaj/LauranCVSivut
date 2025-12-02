@@ -20,12 +20,16 @@
     transition: transform 0.3s ease;
 }
 
+.menu-toggle-icon {
+    cursor: pointer;
+}
+
 .menuLink img {
   transition: transform 0.3s ease;
 }
 
 .menuLink, .menuBackgroundAnimation, .navBarTop {
-    border-bottom: .6rem solid white;
+    border-bottom: 1.2vh solid white;
 }
 
 .menuLink:hover {
