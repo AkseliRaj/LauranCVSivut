@@ -1,0 +1,10 @@
+.bioSection {
+     border: 1.2vh solid white;
+}
+
+.galleryLink {
+     font-family: 'DotGothic16', sans-serif;
+     font-size: 20vh;
+     text-decoration: underline;
+     text-underline-offset: 30px;
+}
