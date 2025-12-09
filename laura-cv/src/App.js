@@ -3,6 +3,7 @@ import NavigationMenu from './components/navigationMenu';
 import About from './components/about';
 import Contact from './components/contact';
 import Gallery from './components/gallery';
+import Footer from './components/footer';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
