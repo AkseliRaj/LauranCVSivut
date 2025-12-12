@@ -1,0 +1,23 @@
+.footer-container {
+    border-top: .7vh solid white;
+}
+
+.socialLinks ul, .siteLinks ul  {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.socialLinks a:hover, .siteLinks a:hover {
+    text-decoration: underline;
+}
+
+.siteLinkHeader h2, .socialLinksHeader h2, .creaditsHeader h2, .creaditsHeader a {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+}
+
+.creaditsHeader a {
+    font-family: 'DotGothic16', sans-serif;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}

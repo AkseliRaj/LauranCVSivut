@@ -3,30 +3,32 @@ import linkIcon from '../assets/svg/human.svg';
 import socialIcon from '../assets/svg/socialSpeechBubble.svg';
 import dinoIcon from '../assets/svg/dino.svg';
 import { Link } from "react-router-dom";
+import '../css/footer.css';
 
 export default function Footer() {
     return (
         <div className="footer-container container-fluid">
             <div className='row'>
+
                 {/*LINKS*/}
-                <div className='col-3'>
-                    <div className='row'>
+                <div className='col-3 p-5'>
+                    <div className='siteLinkHeader row pb-4'>
                         <div className="col-auto">
                             <img src={linkIcon} alt="Link icon" />
                         </div>
-                        <div className="col-auto d-flex align-items-center">
+                        <div className="col-auto d-flex align-items-center ">
                             <h2>Links</h2>
                         </div>
                     </div>
-                    <div>
+                    <div className='siteLinks'>
                         <ul>
-                            <li>
+                            <li className='pb-2'>
                                 <Link to="/about">About</Link>
                             </li>
-                            <li>
+                            <li className='pb-2'>
                                 <Link to="/gallery">Gallery</Link>
                             </li>
-                            <li>
+                            <li className='pb-2'>
                                 <Link to="/contact">Contact</Link>
                             </li>
                         </ul>
@@ -34,8 +36,8 @@ export default function Footer() {
                 </div>
 
                 {/*SOCIALS*/}
-                <div className='col-3'>
-                    <div className='row'>
+                <div className='col-3 p-5'>
+                    <div className='socialLinksHeader row pb-4'>
                         <div className="col-auto">
                             <img src={socialIcon} alt="Social icon" />
                         </div>
@@ -43,25 +45,28 @@ export default function Footer() {
                             <h2>Socials</h2>
                         </div>
                     </div>
-                    <ul>
-                        <li>
-                            <p><a class="link-opacity-80-hover" href="https://www.facebook.com/laura.walden.3591" target='_blank' rel="noopener noreferrer">Facebook</a></p>
-                        </li>
-                        <li>
-                            <p><a class="link-opacity-80-hover" href="https://www.instagram.com/laurawwho/" target='_blank' rel="noopener noreferrer">Instagram</a></p>
-                        </li>
-                        <li>
-                            <p><a class="link-opacity-80-hover" href="https://pinterest.com/laurawwho/" target='_blank' rel="noopener noreferrer">Pinterest</a></p>
-                        </li>
-                    </ul>
+                    <div className='socialLinks'>
+                        <ul>
+                            <li className='pb-2'>
+                                <a class="link-opacity-80-hover" href="https://www.facebook.com/laura.walden.3591" target='_blank' rel="noopener noreferrer">Facebook</a>
+                            </li>
+                            <li className='pb-2'>
+                                <a class="link-opacity-80-hover" href="https://www.instagram.com/laurawwho/" target='_blank' rel="noopener noreferrer">Instagram</a>
+                            </li>
+                            <li className='pb-2'>
+                                <a class="link-opacity-80-hover" href="https://pinterest.com/laurawwho/" target='_blank' rel="noopener noreferrer">Pinterest</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+
                 {/*CREDITS*/}
-                <div className='col-6'>
-                    <div className='row align-middle'>
-                        <div className="col-2">
+                <div className='creaditsHeader col-6 d-flex align-items-center p-5'>
+                    <div className='row d-flex align-items-center'>
+                        <div className="col-3">
                             <img src={dinoIcon} alt="Dino icon" />
                         </div>
-                        <div className="col-2">
+                        <div className="col-1 align-items-end">
                             <p>—</p>
                         </div>
                         <div className="col-8">
@@ -69,6 +74,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     );

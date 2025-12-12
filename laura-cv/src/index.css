@@ -51,3 +51,7 @@ img {
   color: white;
   border: 1px solid #ffffff;
 }
+
+.btn:active {
+  background-color: rgb(255, 255, 255);
+}
