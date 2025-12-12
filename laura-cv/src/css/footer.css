@@ -21,3 +21,8 @@
     text-decoration: underline;
     text-underline-offset: 10px;
 }
+
+.dino-speech-icon {
+  width: 11rem;
+  height: auto;
+}

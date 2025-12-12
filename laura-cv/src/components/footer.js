@@ -1,7 +1,7 @@
 import React from 'react';
 import linkIcon from '../assets/svg/human.svg';
 import socialIcon from '../assets/svg/socialSpeechBubble.svg';
-import dinoIcon from '../assets/svg/dino.svg';
+import dinoSpeechIcon from '../assets/svg/dinoSpeech.svg';
 import { Link } from "react-router-dom";
 import '../css/footer.css';
 
@@ -64,10 +64,11 @@ export default function Footer() {
                 <div className='creaditsHeader col-6 d-flex align-items-center p-5'>
                     <div className='row d-flex align-items-center'>
                         <div className="col-3">
-                            <img src={dinoIcon} alt="Dino icon" />
-                        </div>
-                        <div className="col-1 align-items-end">
-                            <p>—</p>
+                            <img
+                                src={dinoSpeechIcon}
+                                alt="Dino icon"
+                                className="dino-speech-icon"
+                            />
                         </div>
                         <div className="col-8">
                             <h2>Site designed by <a href="https://akselirajahalme.fi/" target="_blank" rel="noopener noreferrer">Akseli Rajahalme</a></h2>
