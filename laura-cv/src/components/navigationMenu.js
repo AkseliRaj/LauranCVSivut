@@ -19,13 +19,16 @@ export default function NavigationMenu() {
     useEffect(() => {
         if (isMenuOpen) {
             document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
         }
-        
+
         // Cleanup function to restore scrolling when component unmounts
         return () => {
             document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
         };
     }, [isMenuOpen]);
 
@@ -33,21 +36,22 @@ export default function NavigationMenu() {
         <div>
             <div className="navBarTop d-flex align-items-center">
                 {isMenuOpen ? (
-                    <img 
-                        className="p-2 menu-toggle-icon" 
-                        src={closeIcon} 
+                    <img
+                        className="p-2 menu-toggle-icon"
+                        src={closeIcon}
                         alt="close menu"
                         onClick={toggleMenu}
                     />
                 ) : (
-                    <img 
-                        className="p-2 menu-toggle-icon" 
-                        src={menuIcon} 
-                        alt="open menu" 
+                    <img
+                        className="p-2 menu-toggle-icon"
+                        src={menuIcon}
+                        alt="open menu"
                         onClick={toggleMenu}
                     />
                 )}
-                <div className="d-flex align-items-center ms-auto">
+                {/*
+                    <div className="d-flex align-items-center ms-auto">
                     <div className="localicationLink px-3">
                         <Link to="/contact" className="d-flex align-items-center pl-5">
                             <img src={speechBubble} alt="speech bubble icon"/>
@@ -62,31 +66,33 @@ export default function NavigationMenu() {
                         </Link>
                     </div>
                 </div>
+                */}
+
             </div>
             <div className={`menuContainer ${isMenuOpen ? 'menuOpen' : 'menuClosed'}`}>
                 <div className="menuBackgroundAnimation">
                     <MenuBackgroundAnimation />
                 </div>
-                <Link 
-                    to="/about" 
+                <Link
+                    to="/about"
                     className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
                     onClick={() => setIsMenuOpen(false)}
                 >
                     <h1 className="ps-5">About</h1>
                     <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
                 </Link>
-                <Link 
-                    to="/gallery" 
+                <Link
+                    to="/gallery"
                     className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
                     onClick={() => setIsMenuOpen(false)}
                 >
                     <h1 className="ps-5">Gallery</h1>
                     <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
                 </Link>
-                <Link 
-                    to="/contact" 
+                <Link
+                    to="/contact"
                     className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
-                    onClick={() => setIsMenuOpen(false)}    
+                    onClick={() => setIsMenuOpen(false)}
                 >
                     <h1 className="ps-5">Contact</h1>
                     <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />

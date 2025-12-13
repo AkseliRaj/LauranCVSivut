@@ -8,10 +8,10 @@ import '../css/footer.css';
 export default function Footer() {
     return (
         <div className="footer-container container-fluid">
-            <div className='row'>
+            <div className='row p-5'>
 
                 {/*LINKS*/}
-                <div className='col-3 p-5'>
+                <div className='col-5 col-lg-3'>
                     <div className='siteLinkHeader row pb-4'>
                         <div className="col-auto">
                             <img src={linkIcon} alt="Link icon" />
@@ -36,7 +36,7 @@ export default function Footer() {
                 </div>
 
                 {/*SOCIALS*/}
-                <div className='col-3 p-5'>
+                <div className='col-7 col-lg-3'>
                     <div className='socialLinksHeader row pb-4'>
                         <div className="col-auto">
                             <img src={socialIcon} alt="Social icon" />
@@ -61,7 +61,7 @@ export default function Footer() {
                 </div>
 
                 {/*CREDITS*/}
-                <div className='creaditsHeader col-6 d-flex align-items-center p-5'>
+                <div className='creaditsHeader col-12 col-lg-6 pt-4 d-flex align-items-center'>
                     <div className='row d-flex align-items-center'>
                         <div className="col-3">
                             <img
@@ -70,8 +70,8 @@ export default function Footer() {
                                 className="dino-speech-icon"
                             />
                         </div>
-                        <div className="col-8">
-                            <h2>Site designed by <a href="https://akselirajahalme.fi/" target="_blank" rel="noopener noreferrer">Akseli Rajahalme</a></h2>
+                        <div className="col-9">
+                            <h2>Site designed by <a href="https://akselirajahalme.fi/" target="_blank" rel="noopener noreferrer"><br className='d-none d-lg-block' />Akseli Rajahalme</a></h2>
                         </div>
                     </div>
                 </div>

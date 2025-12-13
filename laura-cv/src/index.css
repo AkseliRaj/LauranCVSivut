@@ -1,3 +1,10 @@
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 body, a {
   margin: 0;
   margin-bottom: 0;
@@ -6,7 +13,7 @@ body, a {
   -moz-osx-font-smoothing: grayscale;
   color: white;
   background-color: black;
-  font-size: 3vh;
+  font-size: clamp(.8rem, 1.5vw, 2.5rem);
   text-decoration: none;
 }
 
@@ -15,14 +22,14 @@ code {
     monospace;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .galleryLink {
   color: white;
   font-family: 'DotGothic16', sans-serif;
-  letter-spacing: 10px;
+  letter-spacing: .5rem;
 }
 
-h1 {
-  font-size: 20vh;
+h1, .galleryLink {
+  font-size: clamp(3rem, 9vw, 13rem);
 }
 
 img {
