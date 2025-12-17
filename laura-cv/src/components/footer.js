@@ -11,10 +11,14 @@ export default function Footer() {
             <div className='row p-5'>
 
                 {/*LINKS*/}
-                <div className='col-5 col-lg-3'>
+                <div className='col-12 col-sm-6 col-lg-3 pb-5 pb-sm-0'>
                     <div className='siteLinkHeader row pb-4'>
-                        <div className="col-auto">
-                            <img src={linkIcon} alt="Link icon" />
+                        <div className="col-auto d-flex align-items-center">
+                            <img 
+                            src={linkIcon} 
+                            alt="Link icon"
+                            className='site-links-icon'
+                            />
                         </div>
                         <div className="col-auto d-flex align-items-center ">
                             <h2>Links</h2>
@@ -36,10 +40,14 @@ export default function Footer() {
                 </div>
 
                 {/*SOCIALS*/}
-                <div className='col-7 col-lg-3'>
+                <div className='col-12 col-sm-6 col-lg-3 pb-4'>
                     <div className='socialLinksHeader row pb-4'>
-                        <div className="col-auto">
-                            <img src={socialIcon} alt="Social icon" />
+                        <div className="col-auto d-flex align-items-center">
+                            <img
+                                src={socialIcon}
+                                alt="Social icon"
+                                className='social-icon'
+                            />
                         </div>
                         <div className="col-auto d-flex align-items-center">
                             <h2>Socials</h2>
@@ -61,16 +69,16 @@ export default function Footer() {
                 </div>
 
                 {/*CREDITS*/}
-                <div className='creaditsHeader col-12 col-lg-6 pt-4 d-flex align-items-center'>
-                    <div className='row d-flex align-items-center'>
-                        <div className="col-3">
+                <div className='creaditsHeader col-12 col-lg-6 pt-3 d-flex align-items-center'>
+                    <div className='row d-flex align-items-center '>
+                        <div className="col-3 d-none d-md-block">
                             <img
                                 src={dinoSpeechIcon}
                                 alt="Dino icon"
                                 className="dino-speech-icon"
                             />
                         </div>
-                        <div className="col-9">
+                        <div className="col-11 col-sm-9 d-flex align-items-center">
                             <h2>Site designed by <a href="https://akselirajahalme.fi/" target="_blank" rel="noopener noreferrer"><br className='d-none d-lg-block' />Akseli Rajahalme</a></h2>
                         </div>
                     </div>

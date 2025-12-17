@@ -1,28 +1,47 @@
 .footer-container {
-    border-top: .7vh solid white;
+  border-top: .7vh solid white;
 }
 
-.socialLinks ul, .siteLinks ul  {
+.socialLinks ul,
+.siteLinks ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-.socialLinks a:hover, .siteLinks a:hover {
-    text-decoration: underline;
+.socialLinks a:hover,
+.siteLinks a:hover {
+  text-decoration: underline;
 }
 
-.siteLinkHeader h2, .socialLinksHeader h2, .creaditsHeader h2, .creaditsHeader a {
-    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-    letter-spacing: 5px;
+.siteLinkHeader h2,
+.socialLinksHeader h2,
+.creaditsHeader h2,
+.creaditsHeader a {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  letter-spacing: 5px;
 }
 
 .creaditsHeader a {
-    font-family: 'DotGothic16', sans-serif;
-    text-decoration: underline;
-    text-underline-offset: 10px;
+  font-family: 'DotGothic16', sans-serif;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+
+.social-icon,
+.site-links-icon {
+  max-width: 6rem;
+  height: auto;
 }
 
 .dino-speech-icon {
   width: 11rem;
   height: auto;
+}
+
+@media (max-width: 768px) {
+
+  .creaditsHeader h2,
+  .creaditsHeader a {
+    font-size: clamp(1.2rem, 2vw, 3rem);
+  }
 }
