@@ -26,13 +26,13 @@ export default function Footer() {
                     </div>
                     <div className='siteLinks'>
                         <ul>
-                            <li className='pb-2'>
+                            <li className='pb-2 pb-xxl-0'>
                                 <Link to="/about">About</Link>
                             </li>
-                            <li className='pb-2'>
+                            <li className='pb-2 pb-xxl-0'>
                                 <Link to="/gallery">Gallery</Link>
                             </li>
-                            <li className='pb-2'>
+                            <li>
                                 <Link to="/contact">Contact</Link>
                             </li>
                         </ul>
@@ -40,7 +40,7 @@ export default function Footer() {
                 </div>
 
                 {/*SOCIALS*/}
-                <div className='col-12 col-sm-6 col-lg-3 pb-4'>
+                <div className='col-12 col-sm-6 col-lg-3 pb-4 pb-lg-0'>
                     <div className='socialLinksHeader row pb-4'>
                         <div className="col-auto d-flex align-items-center">
                             <img
@@ -55,13 +55,13 @@ export default function Footer() {
                     </div>
                     <div className='socialLinks'>
                         <ul>
-                            <li className='pb-2'>
+                            <li className='pb-2 pb-xxl-0'>
                                 <a class="link-opacity-80-hover" href="https://www.facebook.com/laura.walden.3591" target='_blank' rel="noopener noreferrer">Facebook</a>
                             </li>
-                            <li className='pb-2'>
+                            <li className='pb-2 pb-xxl-0'>
                                 <a class="link-opacity-80-hover" href="https://www.instagram.com/laurawwho/" target='_blank' rel="noopener noreferrer">Instagram</a>
                             </li>
-                            <li className='pb-2'>
+                            <li>
                                 <a class="link-opacity-80-hover" href="https://pinterest.com/laurawwho/" target='_blank' rel="noopener noreferrer">Pinterest</a>
                             </li>
                         </ul>

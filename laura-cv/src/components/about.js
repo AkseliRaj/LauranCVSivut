@@ -60,8 +60,8 @@ export default function About() {
 
                 {/*Link to Gallery*/}
                 <div className='d-flex justify-content-center align-items-center'>
-                    <div className='galleryLinkSection col-xl-11 col-md-12 text-center'>
-                        <h1>Check out all my works <a href="/gallery" className='galleryLink'>here</a> </h1>
+                    <div className='galleryLinkSection col-11 col-md-11 text-center'>
+                        <h1 className='galleryLinkHeader'>Check out all my works <a href="/gallery" className='galleryLink'>here</a> </h1>
                     </div>
                 </div>
 
