@@ -1,5 +1,10 @@
 .bioBorder {
-     border: .5rem solid white;
+     border: .4rem solid white;
+}
+
+.nameHeading {
+     font-size: clamp(3.6rem, 10vw, 15rem);
+     letter-spacing: clamp(.3rem, 1vw, 5rem);
 }
 
 .galleryLink {
@@ -12,8 +17,17 @@
      letter-spacing: clamp(.2rem, 1vw, 1rem);
 }
 
-.heroSection {
-     padding-top: clamp(4rem, 3vw, 2rem);
+.location-icon,
+.lamp-icon {
+  width: clamp(2rem, 5vw, 7rem);
+  height: auto;
+}
+
+.heroOccupation h2, .heroLocation h2 {
+     font-family: 'Space Mono', monospace;
+     font-size: clamp(.9rem, 2vw, 2.5rem);
+     letter-spacing: clamp(.1rem, .2vw, 1rem);
+     margin-bottom: 0;
 }
 
 .bioSection {
