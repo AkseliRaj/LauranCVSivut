@@ -79,3 +79,35 @@ img {
     border-color: transparent !important;
     box-shadow: none !important;
 }
+
+/* Custom white scrollbar - blocky design with no rounded edges */
+/* Webkit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+    border: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border: none;
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
+::-webkit-scrollbar-corner {
+    background: #000000;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff #000000;
+}
