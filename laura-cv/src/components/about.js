@@ -64,10 +64,11 @@ export default function About() {
                                         <h2>Based in Helsinki, Finland</h2>
                                     </div>
                                 </div>
-
-                                <button className="btn btn-primary mt-3">
-                                    Contact me!
-                                </button>
+                                <Link to="/contact">
+                                    <button className="btn btn-primary mt-3">
+                                        Contact me!
+                                    </button>
+                                </Link>
 
                             </div>
                         </div>
@@ -149,9 +150,11 @@ export default function About() {
                             anim id est laborum.
                         </p>
                         <div className="pt-4 d-sm-none">
-                            <button className="btn btn-primary">
-                                Contact me!
-                            </button>
+                            <Link to="/contact" >
+                                <button className="btn btn-primary">
+                                    Contact me!
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
