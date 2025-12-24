@@ -21,42 +21,42 @@ export const ContactForm = () => {
   };
 
   return (
-    <form className='p-2 py-md-4 py-lg-5' ref={form} onSubmit={sendEmail}>
+    <form className='p-2 py-4 p-md-4 py-md-5 p-lg-5' ref={form} onSubmit={sendEmail}>
       
       {/* ROW */}
-      <div className="row pb-5">
-        <div className="col-md-6 pb-5 pb-md-0">
-          <label className="form-label p-1 p-lg-3">Name / Company:</label>
+      <div className="row pb-3 pb-md-4 pb-xl-5 gx-lg-5 gx-xl-6">
+        <div className="col-md-6 pb-4 pb-lg-3 pb-xl-4">
+          <label className="form-label pb-1 pb-lg-3">Name / Company:</label>
           <input
             type="text"
             name="user_name"
-            className="form-control p-1 p-lg-3"
+            className="form-control p-md-2 p-lg-3"
           />
         </div>
 
-        <div className="col-md-6">
-          <label className="form-label p-1 p-lg-3">Email:</label>
+        <div className="col-md-6 pb-4 pb-lg-3 pb-xl-4">
+          <label className="form-label pb-1 pb-lg-3">Email:</label>
           <input
             type="email"
             name="user_email"
-            className="form-control p-1 p-lg-3"
+            className="form-control p-md-2 p-lg-3"
           />
         </div>
       </div>
 
       {/* MESSAGE */}
-      <div className="pb-5">
-        <label className="form-label pb-3">Message:</label>
+      <div className="pb-2 pb-md-5">
+        <label className="form-label pb-1 pb-lg-3">Message:</label>
         <textarea
           name="message"
           rows="5"
-          className="form-control p-1 p-lg-3"
+          className="form-control p-md-2 p-lg-3"
           placeholder='Write your message here'
         />
       </div>
 
       {/* SUBMIT */}
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn btn-primary mt-5">
         Send message
       </button>
 

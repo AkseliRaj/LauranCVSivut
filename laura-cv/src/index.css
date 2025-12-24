@@ -5,6 +5,11 @@ html, body {
   overflow-x: hidden;
 }
 
+html {
+  /* Reserve space for scrollbar to prevent layout shift when modal opens */
+  scrollbar-gutter: stable;
+}
+
 body, a, input, textarea {
   margin: 0;
   margin-bottom: 0;
@@ -15,6 +20,10 @@ body, a, input, textarea {
   background-color: black;
   font-size: clamp(.8rem, 1.5vw, 2.5rem);
   text-decoration: none;
+}
+
+.contactForm input.form-control, .contactForm textarea.form-control  {
+  font-size: clamp(.8rem, 1.2vw, 2.5rem);
 }
 
 code {

@@ -1,5 +1,10 @@
 .contactForm {
-    border: .4rem solid white;
+    border: .7vh solid white;
+}
+
+.contact-container {
+    padding-bottom: clamp(4rem, 7vw, 9rem);
+    padding-top: clamp(2rem, 4vw, 9rem);
 }
 
 .phoneNumber p, .emailContact p {
