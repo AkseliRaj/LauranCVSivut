@@ -1,0 +1,10 @@
+.custom-close-btn {
+  background-color: #000000;
+  border: none;
+  padding: 0;
+}
+
+.custom-close-btn:focus {
+  outline: none;
+  box-shadow: none;
+}

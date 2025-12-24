@@ -1,3 +1,19 @@
 .contactForm {
     border: .4rem solid white;
 }
+
+.phoneNumber p, .emailContact p {
+    margin-bottom: 0;
+}
+
+.phone-icon,
+.email-icon {
+  width: clamp(2rem, 5vw, 7rem);
+  height: auto;
+}
+
+@media (max-width: 410px) {
+    .contactPageHeading {
+        text-align: center;
+    }
+}

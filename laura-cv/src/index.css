@@ -5,7 +5,7 @@ html, body {
   overflow-x: hidden;
 }
 
-body, a {
+body, a, input, textarea {
   margin: 0;
   margin-bottom: 0;
   font-family: 'Space Mono', monospace;
