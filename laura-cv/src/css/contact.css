@@ -7,6 +7,10 @@
     padding-top: clamp(2rem, 4vw, 9rem);
 }
 
+.contactHeroseroSection {
+    padding-bottom: clamp(4rem, 7vw, 9rem);
+}
+
 .phoneNumber p, .emailContact p {
     margin-bottom: 0;
 }
@@ -15,4 +19,11 @@
 .email-icon {
   width: clamp(2rem, 5vw, 7rem);
   height: auto;
+}
+
+@media (max-width: 410px) {
+  .contactPageHeading {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+  }
 }

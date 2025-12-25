@@ -2,7 +2,7 @@
   background-color: #000000;
   border: none;
   padding: 0;
-    width: clamp(2rem, 5vw, 7rem);
+  width: clamp(2rem, 5vw, 7rem);
   height: auto;
 }
 

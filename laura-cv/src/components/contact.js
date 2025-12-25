@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import emailIcon from '../assets/svg/email.svg';
 import phoneIcon from '../assets/svg/phone.svg';
@@ -22,18 +22,18 @@ export default function Contact() {
           {/* HEADER */}
           <div className="row pb-3">
             <div className="col">
-              <h1 className="contactPageHeading">Contact</h1>
+              <h1 className="contactPageHeading">Contact me!</h1>
             </div>
           </div>
 
           {/* HERO SECTION */}
           <div className="row justify-content-center">
-            <div className="col-12 heroSection">
+            <div className="col-12 contactHeroseroSection">
 
               <div className="row align-items-center">
 
                 {/* CONTACT DETAILS */}
-                <div className="col-12 col-md-8 py-2 py-lg-5">
+                <div className="col-12 col-sm-7 pt-2 pt-md-4 pt-lg-5">
                   <div className="contactInformationTextWrapper">
 
                     {/* EMAIL */}
@@ -51,7 +51,7 @@ export default function Contact() {
                     </div>
 
                     {/* PHONE */}
-                    <div className="row pb-4 phoneNumber">
+                    <div className="row pb-4 pb-sm-0 phoneNumber">
                       <div className="col-auto d-flex align-items-center">
                         <img
                           src={phoneIcon}
@@ -68,7 +68,7 @@ export default function Contact() {
                 </div>
 
                 {/* DOWNLOAD CV BUTTON */}
-                <div className="col-12 col-md-4 pb-5 pb-md-0 d-flex justify-content-md-end justify-content-start align-items-center">
+                <div className="col-12 col-sm-5 d-flex justify-content-md-center justify-content-start align-items-center">
                   <button
                     type="button"
                     className="btn btn-primary"

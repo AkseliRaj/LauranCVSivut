@@ -30,7 +30,7 @@ export const ContactForm = () => {
           <input
             type="text"
             name="user_name"
-            className="form-control p-md-2 p-lg-3"
+            className="form-control p-md-2 p-lg-3 p-xl-4"
           />
         </div>
 
@@ -39,7 +39,7 @@ export const ContactForm = () => {
           <input
             type="email"
             name="user_email"
-            className="form-control p-md-2 p-lg-3"
+            className="form-control p-md-2 p-lg-3 p-xl-4"
           />
         </div>
       </div>
@@ -50,7 +50,7 @@ export const ContactForm = () => {
         <textarea
           name="message"
           rows="5"
-          className="form-control p-md-2 p-lg-3"
+          className="form-control p-md-2 p-lg-3 p-xl-4"
           placeholder='Write your message here'
         />
       </div>
