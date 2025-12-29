@@ -34,6 +34,8 @@
 }
 
 .menuLink img {
+  height: clamp(4rem, 5vw, 20rem);
+  width: auto;
   transition: transform 0.3s ease;
 }
 

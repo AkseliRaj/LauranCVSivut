@@ -78,7 +78,7 @@ export default function NavigationMenu() {
                     className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
                     onClick={() => setIsMenuOpen(false)}
                 >
-                    <h1 className="ps-5">About</h1>
+                    <h1 className="ps-4 ps-md-5">About</h1>
                     <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
                 </Link>
                 <Link
@@ -86,7 +86,7 @@ export default function NavigationMenu() {
                     className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
                     onClick={() => setIsMenuOpen(false)}
                 >
-                    <h1 className="ps-5">Gallery</h1>
+                    <h1 className="ps-4 ps-md-5">Gallery</h1>
                     <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
                 </Link>
                 <Link
@@ -94,7 +94,7 @@ export default function NavigationMenu() {
                     className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
                     onClick={() => setIsMenuOpen(false)}
                 >
-                    <h1 className="ps-5">Contact</h1>
+                    <h1 className="ps-4 ps-md-5">Contact</h1>
                     <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
                 </Link>
             </div>
