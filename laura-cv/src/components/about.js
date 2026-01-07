@@ -1,12 +1,20 @@
 import React from 'react';
 import '../css/about.css';
 import { Link } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 
 import profilePicture from '../assets/webp/profilePicture.webp';
 import lampIcon from '../assets/svg/lamp.svg';
 import locationIcon from '../assets/svg/location.svg';
 
 export default function About() {
+    const { t, i18n } = useTranslation();
+
+    const toggleLanguage = () => {
+        const newLang = i18n.language === 'en' ? 'fi' : 'en';
+        i18n.changeLanguage(newLang);
+    };
+
     return (
         <div className="about-container container-fluid">
 
@@ -47,7 +55,7 @@ export default function About() {
                                         />
                                     </div>
                                     <div className="col d-flex align-items-center">
-                                        <h2>Lighting designer</h2>
+                                        <h2>{t('lighting designer')}</h2>
                                     </div>
                                 </div>
 
@@ -61,12 +69,12 @@ export default function About() {
                                         />
                                     </div>
                                     <div className="col d-flex align-items-center">
-                                        <h2>Based in Helsinki, Finland</h2>
+                                        <h2>{t('based in')} Helsinki, {t('finland')}</h2>
                                     </div>
                                 </div>
                                 <Link to="/contact">
                                     <button className="btn btn-primary mt-3">
-                                        Contact me!
+                                        {t('contact me')}
                                     </button>
                                 </Link>
 
@@ -97,7 +105,7 @@ export default function About() {
                                     />
                                 </div>
                                 <div className="col-auto d-flex align-items-center">
-                                    <h2>Lighting designer</h2>
+                                    <h2>{t('lighting designer')}</h2>
                                 </div>
                             </div>
 
@@ -111,7 +119,7 @@ export default function About() {
                                     />
                                 </div>
                                 <div className="col-auto d-flex align-items-center">
-                                    <h2>Based in Helsinki, <br /> Finland</h2>
+                                    <h2>{t('based in')} Helsinki, <br /> {t('finland')}</h2>
                                 </div>
                             </div>
 
@@ -138,21 +146,15 @@ export default function About() {
                     <div className="bioBorder p-lg-5 p-4">
                         <h1 className="pb-lg-4 pb-md-2">BIO</h1>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi ut aliquip ex ea commodo consequat.
+                            {t('lorem ipsum')}
                         </p>
                         <p>
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                            anim id est laborum.
+                            {t('duis aute')}
                         </p>
                         <div className="pt-4 d-sm-none">
                             <Link to="/contact" >
                                 <button className="btn btn-primary">
-                                    Contact me!
+                                    {t('contact me')}
                                 </button>
                             </Link>
                         </div>
@@ -164,9 +166,9 @@ export default function About() {
             <div className="row justify-content-center align-items-center">
                 <div className="col-11 text-center galleryLinkSection">
                     <h1 className="galleryLinkHeader">
-                        Check out all my works{' '}
+                        {t('check out all my works')}{' '}
                         <Link to="/gallery" className="galleryLink">
-                            here
+                            {t('here')}
                         </Link>
                     </h1>
                 </div>

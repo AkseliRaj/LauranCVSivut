@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "../css/navigationMenu.css";
 import MenuBackgroundAnimation from "./menuBackgroundAnimation";
 
@@ -10,7 +11,14 @@ import speechBubble from "../assets/svg/speechBubble.svg";
 import menuIcon from "../assets/svg/menu.svg";
 
 export default function NavigationMenu() {
+    
+    const { t, i18n } = useTranslation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleLanguage = () => {
+        const newLang = i18n.language === 'en' ? 'fi' : 'en';
+        i18n.changeLanguage(newLang);
+    };
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -33,6 +41,7 @@ export default function NavigationMenu() {
     }, [isMenuOpen]);
 
     return (
+        
         <div>
             <div className="navBarTop d-flex align-items-center">
                 {isMenuOpen ? (
@@ -50,25 +59,18 @@ export default function NavigationMenu() {
                         onClick={toggleMenu}
                     />
                 )}
-                {/*
-                    <div className="d-flex align-items-center ms-auto">
-                    <div className="localicationLink px-3">
-                        <Link to="/contact" className="d-flex align-items-center pl-5">
-                            <img src={speechBubble} alt="speech bubble icon"/>
-                            <p className="ps-3">In Finnish</p>
-                        </Link>
-                    </div>
-                    <div/>
-                    <div className="contactLink px-4">
-                        <Link to="/contact" className="d-flex align-items-center pl-5">
-                            <img src={letter} alt="letter icon"/>
-                            <p className="ps-3">Contact</p>
-                        </Link>
-                    </div>
+                <div className="d-flex align-items-center ms-auto">
+                    <button
+                        className="btn btn-sm btn-outline-secondary me-3"
+                        onClick={toggleLanguage}
+                        style={{ fontSize: '0.875rem' }}
+                    >
+                        {i18n.language === 'en' ? 'FI' : 'EN'}
+                    </button>
                 </div>
-                */}
-
             </div>
+
+
             <div className={`menuContainer ${isMenuOpen ? 'menuOpen' : 'menuClosed'}`}>
                 <div className="menuBackgroundAnimation">
                     <MenuBackgroundAnimation />
@@ -78,7 +80,7 @@ export default function NavigationMenu() {
                     className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
                     onClick={() => setIsMenuOpen(false)}
                 >
-                    <h1 className="ps-4 ps-md-5">About</h1>
+                    <h1 className="ps-4 ps-md-5">{t('about')}</h1>
                     <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
                 </Link>
                 <Link
@@ -86,7 +88,7 @@ export default function NavigationMenu() {
                     className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
                     onClick={() => setIsMenuOpen(false)}
                 >
-                    <h1 className="ps-4 ps-md-5">Gallery</h1>
+                    <h1 className="ps-4 ps-md-5">{t('gallery')}</h1>
                     <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
                 </Link>
                 <Link
@@ -94,7 +96,7 @@ export default function NavigationMenu() {
                     className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
                     onClick={() => setIsMenuOpen(false)}
                 >
-                    <h1 className="ps-4 ps-md-5">Contact</h1>
+                    <h1 className="ps-4 ps-md-5">{t('contact')}</h1>
                     <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
                 </Link>
             </div>

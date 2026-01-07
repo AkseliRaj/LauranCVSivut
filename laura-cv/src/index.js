@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './index.css';
+import './i18n'; // Initialize i18next
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
