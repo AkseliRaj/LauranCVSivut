@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useTranslation } from "react-i18next";
 
 import emailIcon from '../assets/svg/email.svg';
 import phoneIcon from '../assets/svg/phone.svg';
@@ -12,6 +13,7 @@ import cvEnglish from '../assets/pdf/CV_AkseliRajahalmeEnglish.pdf';
 import '../css/contact.css';
 
 export default function Contact() {
+  const { t } = useTranslation();
   return (
     <div className="contact-container container-fluid">
 
@@ -22,7 +24,7 @@ export default function Contact() {
           {/* HEADER */}
           <div className="row pb-3">
             <div className="col">
-              <h1 className="contactPageHeading">Contact me!</h1>
+              <h1 className="contactPageHeading">{t('contact me!')}</h1>
             </div>
           </div>
 
@@ -75,7 +77,7 @@ export default function Contact() {
                     data-bs-toggle="modal"
                     data-bs-target="#cvDownloadModal"
                   >
-                    Download CV
+                    {t('download cv')}
                   </button>
                 </div>
 
@@ -95,14 +97,14 @@ export default function Contact() {
       </div>
 
       {/* CV DOWNLOAD MODAL */}
-      <ModalPopup id="cvDownloadModal" title="Pick your poison!">
+      <ModalPopup id="cvDownloadModal" title={t('pick your poison')}>
         <div className="d-flex flex-column gap-4">
           <a
             href={cvFinnish}
             className="btn btn-outline-primary"
             download
           >
-            Download CV (Finnish)
+            {t('download cv finnish')}
           </a>
 
           <a
@@ -110,7 +112,7 @@ export default function Contact() {
             className="btn btn-outline-primary"
             download
           >
-            Download CV (English)
+            {t('download cv english')}
           </a>
         </div>
       </ModalPopup>

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Modal } from 'bootstrap';
+import { useTranslation } from "react-i18next";
 import closeIcon from '../assets/svg/close.svg';
 import '../css/modalPopup.css';
 
 export default function ModalPopup({ id, title, children }) {
+  const { t } = useTranslation();
   const handleClose = () => {
     const modalEl = document.getElementById(id);
     if (!modalEl) return;
@@ -21,10 +23,10 @@ export default function ModalPopup({ id, title, children }) {
               type="button"
               className="custom-close-btn"
               data-bs-dismiss="modal"
-              aria-label="Close"
+              aria-label={t('close')}
               onClick={handleClose}
             >
-              <img src={closeIcon} alt="Close" />
+              <img src={closeIcon} alt={t('close')} />
             </button>
           </div>
           <div className="modal-body p-5">

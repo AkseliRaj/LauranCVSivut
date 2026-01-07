@@ -3,9 +3,11 @@ import linkIcon from '../assets/svg/human.svg';
 import socialIcon from '../assets/svg/socialSpeechBubble.svg';
 import dinoSpeechIcon from '../assets/svg/dinoSpeech.svg';
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import '../css/footer.css';
 
 export default function Footer() {
+    const { t } = useTranslation();
     return (
         <div className="footer-container container-fluid">
             <div className='row p-5'>
@@ -21,19 +23,19 @@ export default function Footer() {
                             />
                         </div>
                         <div className="col-auto d-flex align-items-center ">
-                            <h2>Links</h2>
+                            <h2>{t('links')}</h2>
                         </div>
                     </div>
                     <div className='siteLinks'>
                         <ul>
                             <li className='pb-2 pb-xxl-0'>
-                                <Link to="/about">About</Link>
+                                <Link to="/about">{t('about')}</Link>
                             </li>
                             <li className='pb-2 pb-xxl-0'>
-                                <Link to="/gallery">Gallery</Link>
+                                <Link to="/gallery">{t('gallery')}</Link>
                             </li>
                             <li>
-                                <Link to="/contact">Contact</Link>
+                                <Link to="/contact">{t('contact')}</Link>
                             </li>
                         </ul>
                     </div>
@@ -50,7 +52,7 @@ export default function Footer() {
                             />
                         </div>
                         <div className="col-auto d-flex align-items-center">
-                            <h2>Socials</h2>
+                            <h2>{t('socials')}</h2>
                         </div>
                     </div>
                     <div className='socialLinks'>
@@ -79,7 +81,7 @@ export default function Footer() {
                             />
                         </div>
                         <div className="col-11 col-sm-9 d-flex align-items-center">
-                            <h2>Site designed by <a href="https://akselirajahalme.fi/" target="_blank" rel="noopener noreferrer"><br className='d-none d-lg-block' />Akseli Rajahalme</a></h2>
+                            <h2>{t('site designed by')} <a href="https://akselirajahalme.fi/" target="_blank" rel="noopener noreferrer"><br className='d-none d-lg-block' />Akseli Rajahalme</a></h2>
                         </div>
                     </div>
                 </div>

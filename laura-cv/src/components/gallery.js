@@ -1,8 +1,10 @@
 import React from 'react';
+import { useTranslation } from "react-i18next";
 import '../css/gallery.css';
 import GalleryGrid from './galleryGrid.js';
 
 export default function Gallery() {
+    const { t } = useTranslation();
     return (
         <div className="gallery-container container-fluid">
             <div className='row justify-content-center'>
@@ -11,14 +13,12 @@ export default function Gallery() {
                     {/* HEADER */}
                     <div className='row'>
                         <div className='col galleryHeader'>
-                            <h1 className='pb-4 pb-md-5'>Gallery</h1>
+                            <h1 className='pb-4 pb-md-5'>{t('gallery')}</h1>
                             <p>
-                                For the last few years I've worked as a lighting designer and a technician
-                                in a variety of projects, ranging from theater acts to public and private events.
+                                {t('gallery description 1')}
                             </p>
                             <p>
-                                Down below is a collection of different
-                                projects I was a part of, please enjoy!
+                                {t('gallery description 2')}
                             </p>
                         </div>
                     </div>

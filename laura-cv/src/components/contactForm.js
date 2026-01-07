@@ -1,9 +1,11 @@
 import React, { useRef } from 'react';
+import { useTranslation } from "react-i18next";
 import emailjs from '@emailjs/browser';
 import '../css/contactForm.css';
 
 
 export const ContactForm = () => {
+  const { t } = useTranslation();
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -26,7 +28,7 @@ export const ContactForm = () => {
       {/* ROW */}
       <div className="row pb-3 pb-md-4 pb-xl-5 gx-lg-5 gx-xl-6">
         <div className="col-md-6 pb-4 pb-lg-3 pb-xl-4">
-          <label className="form-label pb-1 pb-lg-3">Name / Company:</label>
+          <label className="form-label pb-1 pb-lg-3">{t('name company')}</label>
           <input
             type="text"
             name="user_name"
@@ -35,7 +37,7 @@ export const ContactForm = () => {
         </div>
 
         <div className="col-md-6 pb-4 pb-lg-3 pb-xl-4">
-          <label className="form-label pb-1 pb-lg-3">Email:</label>
+          <label className="form-label pb-1 pb-lg-3">{t('email')}</label>
           <input
             type="email"
             name="user_email"
@@ -46,18 +48,18 @@ export const ContactForm = () => {
 
       {/* MESSAGE */}
       <div className="pb-2 pb-md-5">
-        <label className="form-label pb-1 pb-lg-3">Message:</label>
+        <label className="form-label pb-1 pb-lg-3">{t('message')}</label>
         <textarea
           name="message"
           rows="5"
           className="form-control p-md-2 p-lg-3 p-xl-4"
-          placeholder='Write your message here'
+          placeholder={t('message placeholder')}
         />
       </div>
 
       {/* SUBMIT */}
       <button type="submit" className="btn btn-primary mt-5">
-        Send message
+        {t('send message')}
       </button>
 
     </form>
