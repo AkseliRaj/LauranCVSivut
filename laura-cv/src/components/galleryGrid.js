@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/galleryGrid.css";
+import { Link } from "react-router-dom";
 
 const items = [
   {
@@ -43,9 +44,8 @@ export default function GalleryGrid() {
             key={item.id}
             className="col-6 col-lg-4"
           >
-            <a href="#!" className="gallery-tile" aria-label={item.title}>
+            <Link to="/GalleryItemPage">
               <img className="gallery-img" src={item.src} alt={item.title} />
-
               <div className="gallery-overlay" aria-hidden="true">
                 <div className="gallery-overlay-inner">
                   <div className="gallery-title">{item.title}</div>
@@ -54,7 +54,7 @@ export default function GalleryGrid() {
                   )}
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         ))}
       </div>

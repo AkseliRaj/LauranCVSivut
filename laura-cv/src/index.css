@@ -89,6 +89,16 @@ img {
     box-shadow: none !important;
 }
 
+ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+li {
+  padding-bottom: 1rem;
+}
+
 /* Custom white scrollbar - blocky design with no rounded edges */
 /* Webkit browsers (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {

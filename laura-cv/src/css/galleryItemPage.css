@@ -1,0 +1,34 @@
+.galleryItemContainer {
+    padding-bottom: clamp(2rem, 7vw, 9rem);
+    padding-top: clamp(2rem, 4vw, 9rem);
+}
+
+.headerSection, .descriptionSection, .creditsSection {
+    padding-bottom: clamp(2rem, 7vw, 9rem);
+}
+
+span{
+    font-weight: bold;
+}
+
+.linksSection a{
+        text-decoration: underline;
+    text-underline-offset: clamp(5px, .1vw, 30px);
+}
+
+.backArrow-icon {
+    width: clamp(2rem, 5vw, 7rem);
+    height: auto;
+}
+
+.backButtonText {
+    font-size: clamp(.9rem, 2vw, 2.5rem);
+    letter-spacing: clamp(.1rem, .2vw, 1rem);
+    margin-bottom: 0px;
+}
+
+.backButton:hover h2 {
+    text-decoration: underline;
+    text-underline-offset: clamp(5px, .1vw, 30px);
+}
+

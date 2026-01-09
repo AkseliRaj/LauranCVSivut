@@ -4,7 +4,9 @@ import About from './components/about';
 import Contact from './components/contact';
 import Gallery from './components/gallery';
 import Footer from './components/footer';
+import GalleryItemPage from './components/galleryItemPage';
 import './App.css';
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/GalleryItemPage" element={<GalleryItemPage />} />
         </Routes>
         <Footer />
       </div>
