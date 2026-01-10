@@ -3,9 +3,24 @@ import "../css/galleryItemPage.css"
 import backArrowIcon from "../assets/svg/backArrow.svg";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import EmblaCarousel from "./emblacarousel/EmblaCarousel";
+import "./emblacarousel/embla.css";
 
 export default function GalleryItemPage() {
     const { t, i18n } = useTranslation();
+    
+    // Sample images for the carousel
+    const sampleImages = [
+        "https://picsum.photos/id/1011/800/600",
+        "https://picsum.photos/id/1015/800/600",
+        "https://picsum.photos/id/1018/800/600",
+        "https://picsum.photos/id/1020/800/600",
+        "https://picsum.photos/id/1022/800/600",
+        "https://picsum.photos/id/1025/800/600"
+    ];
+
+    const carouselOptions = { dragFree: true, loop: false };
+
     return (
         <div className="galleryItemContainer container-fluid">
 
@@ -31,7 +46,12 @@ export default function GalleryItemPage() {
                 </div>
             </div>
 
-            {/* Image carousel here */}
+            {/* Image carousel */}
+            <div className="row justify-content-center pb-4 pb-md-5">
+                <div className="col-11">
+                    <EmblaCarousel slides={sampleImages} options={carouselOptions} />
+                </div>
+            </div>
 
             <div className="row justify-content-center">
                 <div className="descriptionSection col-11">
@@ -70,7 +90,7 @@ export default function GalleryItemPage() {
                     <h1>{t("usefulLinks")}</h1>
                 </div>
                 <div className="linksSection col-11">
-                    <a class="link-opacity-80-hover" href="https://teatteri.ouka.fi/naytelma/post-kabaree/" target='_blank' rel="noopener noreferrer">https://teatteri.ouka.fi/naytelma/post-kabaree/</a>
+                    <a className="link-opacity-80-hover" href="https://teatteri.ouka.fi/naytelma/post-kabaree/" target='_blank' rel="noopener noreferrer">https://teatteri.ouka.fi/naytelma/post-kabaree/</a>
                 </div>
             </div>
 

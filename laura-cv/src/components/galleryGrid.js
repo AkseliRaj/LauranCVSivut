@@ -44,7 +44,7 @@ export default function GalleryGrid() {
             key={item.id}
             className="col-6 col-lg-4"
           >
-            <Link to="/GalleryItemPage">
+            <Link to="/GalleryItemPage" className="gallery-tile">
               <img className="gallery-img" src={item.src} alt={item.title} />
               <div className="gallery-overlay" aria-hidden="true">
                 <div className="gallery-overlay-inner">

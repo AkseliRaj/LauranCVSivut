@@ -32,3 +32,19 @@ span{
     text-underline-offset: clamp(5px, .1vw, 30px);
 }
 
+/* Carousel styling for gallery page */
+.galleryItemContainer .embla {
+    max-width: 100%;
+    --slide-size: 50%;
+    --slide-height: 50vh;
+}
+
+.galleryItemContainer .embla__slide {
+    min-height: var(--slide-height);
+}
+
+.galleryItemContainer .embla__slide__img {
+    border-radius: 0.4rem;
+    max-height: var(--slide-height);
+    object-fit: cover;
+}
