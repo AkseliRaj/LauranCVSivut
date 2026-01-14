@@ -78,7 +78,10 @@ export default function NavigationMenu() {
                 <Link
                     to="/about"
                     className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => {
+                        window.skipPageTransition = true;
+                        setIsMenuOpen(false);
+                    }}
                 >
                     <h1 className="ps-4 ps-md-5">{t('about')}</h1>
                     <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
@@ -86,7 +89,10 @@ export default function NavigationMenu() {
                 <Link
                     to="/gallery"
                     className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => {
+                        window.skipPageTransition = true;
+                        setIsMenuOpen(false);
+                    }}
                 >
                     <h1 className="ps-4 ps-md-5">{t('gallery')}</h1>
                     <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
@@ -94,7 +100,10 @@ export default function NavigationMenu() {
                 <Link
                     to="/contact"
                     className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => {
+                        window.skipPageTransition = true;
+                        setIsMenuOpen(false);
+                    }}
                 >
                     <h1 className="ps-4 ps-md-5">{t('contact')}</h1>
                     <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
