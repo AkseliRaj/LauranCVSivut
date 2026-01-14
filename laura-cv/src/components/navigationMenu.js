@@ -79,7 +79,7 @@ export default function NavigationMenu() {
                     to="/about"
                     className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
                     onClick={() => {
-                        window.skipPageTransition = true;
+                        window.isMenuNavigation = true;
                         setIsMenuOpen(false);
                     }}
                 >
@@ -90,7 +90,7 @@ export default function NavigationMenu() {
                     to="/gallery"
                     className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
                     onClick={() => {
-                        window.skipPageTransition = true;
+                        window.isMenuNavigation = true;
                         setIsMenuOpen(false);
                     }}
                 >
@@ -101,7 +101,7 @@ export default function NavigationMenu() {
                     to="/contact"
                     className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
                     onClick={() => {
-                        window.skipPageTransition = true;
+                        window.isMenuNavigation = true;
                         setIsMenuOpen(false);
                     }}
                 >

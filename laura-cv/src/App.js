@@ -23,21 +23,28 @@ function AppRoutes() {
     }
 
     if (location.pathname !== displayLocation.pathname) {
-      // If navigation came from the NavigationMenu, skip the fade transition
-      if (window.skipPageTransition) {
-        window.skipPageTransition = false;
-        setDisplayLocation(location);
-        setTransitionStage('fadeIn');
-        return;
+      // If navigation came from menu, wait for menu close animation (500ms) before starting fade
+      const menuDelay = window.isMenuNavigation ? 500 : 0;
+      if (window.isMenuNavigation) {
+        window.isMenuNavigation = false;
       }
 
-      setTransitionStage('fadeOut');
-      const timer = setTimeout(() => {
-        setDisplayLocation(location);
-        setTransitionStage('fadeIn');
-      }, 300);
+      let fadeInTimer;
+      const fadeOutTimer = setTimeout(() => {
+        setTransitionStage('fadeOut');
+        fadeInTimer = setTimeout(() => {
+          setDisplayLocation(location);
+          setTransitionStage('fadeIn');
+          window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        }, 300);
+      }, menuDelay);
 
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(fadeOutTimer);
+        if (fadeInTimer) {
+          clearTimeout(fadeInTimer);
+        }
+      };
     }
   }, [location, displayLocation.pathname]);
 
