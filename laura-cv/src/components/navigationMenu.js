@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "../css/navigationMenu.css";
 import MenuBackgroundAnimation from "./menuBackgroundAnimation";
@@ -11,9 +11,12 @@ import speechBubble from "../assets/svg/speechBubble.svg";
 import menuIcon from "../assets/svg/menu.svg";
 
 export default function NavigationMenu() {
-    
+
     const { t, i18n } = useTranslation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const location = useLocation();
+
+    const isCurrentRoute = (path) => location.pathname === path;
 
     const toggleLanguage = () => {
         const newLang = i18n.language === 'en' ? 'fi' : 'en';
@@ -41,7 +44,7 @@ export default function NavigationMenu() {
     }, [isMenuOpen]);
 
     return (
-        
+
         <div>
             <div className="navBarTop d-flex align-items-center">
                 {isMenuOpen ? (
@@ -72,42 +75,109 @@ export default function NavigationMenu() {
 
 
             <div className={`menuContainer ${isMenuOpen ? 'menuOpen' : 'menuClosed'}`}>
+
                 <div className="menuBackgroundAnimation">
                     <MenuBackgroundAnimation />
                 </div>
+
                 <Link
                     to="/about"
-                    className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
-                    onClick={() => {
+                    className={`
+                                menuLink
+                                d-flex
+                                align-items-center
+                                justify-content-between
+                                text-decoration-none
+                                ${isCurrentRoute("/about") ? "menuLinkDisabled" : ""}
+                            `}
+                    onClick={(e) => {
+                        if (isCurrentRoute("/about")) {
+                            e.preventDefault(); // safety net
+                            return;
+                        }
+
                         window.isMenuNavigation = true;
                         setIsMenuOpen(false);
                     }}
                 >
-                    <h1 className="ps-4 ps-md-5">{t('about')}</h1>
-                    <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
+                    <h1 className="ps-4 ps-md-5">{t("about")}</h1>
+
+                    {isCurrentRoute("/about") ? (
+                        <p className="siteLocationText pe-5">{t("currently here")}</p>
+                    ) : (
+                        <img
+                            className="pe-5 d-none d-md-block"
+                            src={arrowLeftIcon}
+                            alt="arrow left"
+                        />
+                    )}
                 </Link>
+
                 <Link
                     to="/gallery"
-                    className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
-                    onClick={() => {
+                    aria-current={isCurrentRoute("/gallery") ? "page" : undefined}
+                    className={`menuLink 
+                                d-flex 
+                                align-items-center
+                                justify-content-between 
+                                text-decoration-none 
+                                ${isCurrentRoute("/gallery") ? "menuLinkDisabled" : ""}
+                            `}
+                    onClick={(e) => {
+                        if (isCurrentRoute("/gallery")) {
+                            e.preventDefault();
+                            return;
+                        }
                         window.isMenuNavigation = true;
                         setIsMenuOpen(false);
                     }}
                 >
-                    <h1 className="ps-4 ps-md-5">{t('gallery')}</h1>
-                    <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
+                    <h1 className="ps-4 ps-md-5">{t("gallery")}</h1>
+
+                    {isCurrentRoute("/gallery") ? (
+                        <p className="siteLocationText pe-5">{t("currently here")}</p>
+                    ) : (
+                        <img
+                            className="pe-5 d-none d-md-block"
+                            src={arrowLeftIcon}
+                            alt="arrow left"
+                        />
+                    )}
                 </Link>
+
                 <Link
                     to="/contact"
-                    className="menuLink d-flex align-items-center justify-content-between text-decoration-none"
-                    onClick={() => {
+                    aria-current={isCurrentRoute("/contact") ? "page" : undefined}
+                    className={`
+                                menuLink
+                                d-flex
+                                align-items-center
+                                justify-content-between
+                                text-decoration-none
+                                ${isCurrentRoute("/contact") ? "menuLinkDisabled" : ""}
+                            `}
+                    onClick={(e) => {
+                        if (isCurrentRoute("/contact")) {
+                            e.preventDefault();
+                            return;
+                        }
                         window.isMenuNavigation = true;
                         setIsMenuOpen(false);
                     }}
                 >
-                    <h1 className="ps-4 ps-md-5">{t('contact')}</h1>
-                    <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
+                    <h1 className="ps-4 ps-md-5">{t("contact")}</h1>
+
+                    {isCurrentRoute("/contact") ? (
+                        <p className="siteLocationTextpe-5">{t("currently here")}</p>
+                    ) : (
+                        <img
+                            className="pe-5 d-none d-md-block"
+                            src={arrowLeftIcon}
+                            alt="arrow left"
+                        />
+                    )}
                 </Link>
+
             </div>
         </div>
     );

@@ -8,6 +8,14 @@
     width: 100%;
 }
 
+.menuLinkActive {
+    pointer-events: none;
+}
+
+.siteLocationText {
+  margin: 0px
+}
+
 .menuLink h1 {
   font-size: clamp(5.2vh, 10vw, 10vh);
   letter-spacing: 0px;

@@ -23,8 +23,8 @@ function AppRoutes() {
     }
 
     if (location.pathname !== displayLocation.pathname) {
-      // If navigation came from menu, wait for menu close animation (500ms) before starting fade
-      const menuDelay = window.isMenuNavigation ? 500 : 0;
+      // If navigation came from menu, wait for menu close animation (300ms) before starting fade
+      const menuDelay = window.isMenuNavigation ? 300 : 0;
       if (window.isMenuNavigation) {
         window.isMenuNavigation = false;
       }
