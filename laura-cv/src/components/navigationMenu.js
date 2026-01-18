@@ -168,7 +168,7 @@ export default function NavigationMenu() {
                     <h1 className="ps-4 ps-md-5">{t("contact")}</h1>
 
                     {isCurrentRoute("/contact") ? (
-                        <p className="siteLocationTextpe-5">{t("currently here")}</p>
+                        <p className="siteLocationText pe-5">{t("currently here")}</p>
                     ) : (
                         <img
                             className="pe-5 d-none d-md-block"
