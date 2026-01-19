@@ -16,6 +16,29 @@
   margin: 0px
 }
 
+.language-toggle {
+  max-height: 100%;
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.language-toggle-icon {
+  height: 100%;
+  max-height: 1.4rem;
+  width: auto;
+  filter: invert();
+  transition: transform 0.3s ease;
+
+}
+
+.language-toggle:hover .language-toggle-icon {
+  filter: none;
+}
+
 .menuLink h1 {
   font-size: clamp(5.2vh, 10vw, 10vh);
   letter-spacing: 0px;
@@ -31,11 +54,11 @@
     z-index: 1000;
 }
 
-.navBarTop img {
-    height: 100%;
-    width: auto; 
-    object-fit: contain;
-    transition: transform 0.3s ease;
+.navBarTop > img.menu-toggle-icon {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 .navBarTop p {
@@ -45,13 +68,6 @@
 .menu-toggle-icon {
     cursor: pointer;
 }
-
-.language-toggle {
-  padding: 0.4rem 0.8rem;
-  font-size: clamp(0.9rem, 1.2vw, 1.6rem);
-  margin-right: 1rem;
-}
-
 
 .menuLink img {
   height: clamp(4rem, 5vw, 20rem);

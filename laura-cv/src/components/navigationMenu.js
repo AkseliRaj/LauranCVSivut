@@ -75,13 +75,22 @@ export default function NavigationMenu() {
                         onClick={toggleMenu}
                     />
                 )}
-                <div className="d-flex align-items-center ms-auto">
-                <button
-                    className="btn language-toggle"
-                    onClick={toggleLanguage}
-                >
-                    {i18n.language === 'en' ? 'FI' : 'EN'}
-                </button>
+                <div className="d-flex align-items-center ms-auto me-3">
+                    <button
+                        className="btn language-toggle"
+                        onClick={toggleLanguage}
+                    >
+                        <img
+                            className="language-toggle-icon"
+                            src={speechBubble}
+                            alt=""
+                            aria-hidden="true"
+                        />
+                        <span className="language-toggle-text">
+                            {i18n.language === "en" ? "FI" : "EN"}
+                        </span>
+                    </button>
+
                 </div>
             </div>
 
