@@ -15,6 +15,7 @@ export default function NavigationMenu() {
     const { t, i18n } = useTranslation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
+    const [shakePath, setShakePath] = useState(null);
 
     const isCurrentRoute = (path) => location.pathname === path;
 
@@ -42,6 +43,18 @@ export default function NavigationMenu() {
             document.documentElement.style.overflow = '';
         };
     }, [isMenuOpen]);
+
+    const triggerShake = (path) => {
+        // restart animation even on repeated clicks
+        setShakePath(null);
+        requestAnimationFrame(() => setShakePath(path));
+    };
+
+    useEffect(() => {
+        if (!shakePath) return;
+        const id = window.setTimeout(() => setShakePath(null), 500);
+        return () => window.clearTimeout(id);
+    }, [shakePath]);
 
     return (
 
@@ -80,6 +93,7 @@ export default function NavigationMenu() {
                     <MenuBackgroundAnimation />
                 </div>
 
+                {/*NAVIGATION LINKS*/}
                 <Link
                     to="/about"
                     className={`
@@ -93,6 +107,7 @@ export default function NavigationMenu() {
                     onClick={(e) => {
                         if (isCurrentRoute("/about")) {
                             e.preventDefault(); // safety net
+                            triggerShake("/about")
                             return;
                         }
 
@@ -100,10 +115,15 @@ export default function NavigationMenu() {
                         setIsMenuOpen(false);
                     }}
                 >
-                    <h1 className="ps-4 ps-md-5">{t("about")}</h1>
+                    <h1 className={`ps-4 ps-md-5 ${shakePath === "/about" ? "shake" : ""}`}>
+                        {t("about")}
+                    </h1>
+
 
                     {isCurrentRoute("/about") ? (
-                        <p className="siteLocationText pe-5">{t("currently here")}</p>
+                        <p className={`siteLocationText pe-5 ${shakePath === "/about" ? "shake" : ""}`}>
+                            {t("currently here")}
+                        </p>
                     ) : (
                         <img
                             className="pe-5 d-none d-md-block"
@@ -115,33 +135,27 @@ export default function NavigationMenu() {
 
                 <Link
                     to="/gallery"
-                    aria-current={isCurrentRoute("/gallery") ? "page" : undefined}
-                    className={`menuLink 
-                                d-flex 
-                                align-items-center
-                                justify-content-between 
-                                text-decoration-none 
-                                ${isCurrentRoute("/gallery") ? "menuLinkDisabled" : ""}
-                            `}
+                    className={`menuLink d-flex align-items-center justify-content-between text-decoration-none ${isCurrentRoute("/gallery") ? "menuLinkDisabled" : ""}`}
                     onClick={(e) => {
                         if (isCurrentRoute("/gallery")) {
                             e.preventDefault();
+                            triggerShake("/gallery");
                             return;
                         }
                         window.isMenuNavigation = true;
                         setIsMenuOpen(false);
                     }}
                 >
-                    <h1 className="ps-4 ps-md-5">{t("gallery")}</h1>
+                    <h1 className={`ps-4 ps-md-5 ${shakePath === "/gallery" ? "shake" : ""}`}>
+                        {t("gallery")}
+                    </h1>
 
                     {isCurrentRoute("/gallery") ? (
-                        <p className="siteLocationText pe-5">{t("currently here")}</p>
+                        <p className={`siteLocationText pe-5 ${shakePath === "/gallery" ? "shake" : ""}`}>
+                            {t("currently here")}
+                        </p>
                     ) : (
-                        <img
-                            className="pe-5 d-none d-md-block"
-                            src={arrowLeftIcon}
-                            alt="arrow left"
-                        />
+                        <img className="pe-5 d-none d-md-block" src={arrowLeftIcon} alt="arrow left" />
                     )}
                 </Link>
 
@@ -159,16 +173,21 @@ export default function NavigationMenu() {
                     onClick={(e) => {
                         if (isCurrentRoute("/contact")) {
                             e.preventDefault();
+                            triggerShake("/contact");
                             return;
                         }
                         window.isMenuNavigation = true;
                         setIsMenuOpen(false);
                     }}
                 >
-                    <h1 className="ps-4 ps-md-5">{t("contact")}</h1>
+                    <h1 className={`ps-4 ps-md-5 ${shakePath === "/contact" ? "shake" : ""}`}>
+                        {t("contact")}
+                    </h1>
 
                     {isCurrentRoute("/contact") ? (
-                        <p className="siteLocationText pe-5">{t("currently here")}</p>
+                        <p className={`siteLocationText pe-5 ${shakePath === "/contact" ? "shake" : ""}`}>
+                            {t("currently here")}
+                        </p>
                     ) : (
                         <img
                             className="pe-5 d-none d-md-block"
