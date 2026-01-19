@@ -46,6 +46,13 @@
     cursor: pointer;
 }
 
+.language-toggle {
+  padding: 0.4rem 0.8rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.6rem);
+  margin-right: 1rem;
+}
+
+
 .menuLink img {
   height: clamp(4rem, 5vw, 20rem);
   width: auto;

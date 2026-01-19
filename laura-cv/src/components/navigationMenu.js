@@ -76,13 +76,12 @@ export default function NavigationMenu() {
                     />
                 )}
                 <div className="d-flex align-items-center ms-auto">
-                    <button
-                        className="btn btn-sm btn-outline-secondary me-3"
-                        onClick={toggleLanguage}
-                        style={{ fontSize: '0.875rem' }}
-                    >
-                        {i18n.language === 'en' ? 'FI' : 'EN'}
-                    </button>
+                <button
+                    className="btn language-toggle"
+                    onClick={toggleLanguage}
+                >
+                    {i18n.language === 'en' ? 'FI' : 'EN'}
+                </button>
                 </div>
             </div>
 
