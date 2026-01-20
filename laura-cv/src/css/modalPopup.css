@@ -12,24 +12,40 @@
 }
 
 .modal-content {
-    border: .7vh solid white;
-    min-width: fit-content;
-
+  border: .7vh solid white;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .modal-header {
-    border-bottom: .7vh solid white;
+  border-bottom: .7vh solid white;
 }
 
 .modal-title {
-    font-size: clamp(1.7rem, 3vw, 15rem);
-    white-space: nowrap;
-    max-width: 85%;
+  font-size: clamp(1.7rem, 3vw, 15rem);
+  white-space: normal;
+  overflow-wrap: anywhere;
+  max-width: 85%;
 }
 
-/* Override Bootstrap's padding-right to prevent layout shift */
-/* The scrollbar-gutter property in index.css handles the scrollbar compensation */
 body.modal-open {
-    padding-right: 0 !important;
+  padding-right: 0 !important;
 }
 
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 0.75rem;
+    max-width: calc(100% - 1.5rem);
+  }
+
+  .modal-header,
+  .modal-body {
+    padding: 1rem !important;
+  }
+
+  .modal-body {
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+  }
+}

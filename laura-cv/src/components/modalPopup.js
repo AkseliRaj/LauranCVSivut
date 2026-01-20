@@ -17,7 +17,7 @@ export default function ModalPopup({ id, title, children }) {
     <div className="modal fade" id={id} tabIndex="-1" aria-labelledby={`${id}Label`} aria-hidden="true">
       <div className="modal-dialog modal-dialog-centered modal-lg">
         <div className="modal-content bg-black text-white rounded-0">
-          <div className="modal-header p-5 d-flex justify-content-between align-items-center">
+          <div className="modal-header p-3 p-sm-5 d-flex justify-content-between align-items-center">
             <h2 className="modal-title" id={`${id}Label`}>{title}</h2>
             <button
               type="button"
@@ -29,7 +29,7 @@ export default function ModalPopup({ id, title, children }) {
               <img src={closeIcon} alt={t('close')} />
             </button>
           </div>
-          <div className="modal-body p-5">
+          <div className="modal-body p-3 p-sm-5">
             {children}
           </div>
         </div>
