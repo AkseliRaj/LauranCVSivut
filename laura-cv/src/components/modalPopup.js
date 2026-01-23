@@ -6,6 +6,7 @@ import '../css/modalPopup.css';
 
 export default function ModalPopup({ id, title, children }) {
   const { t } = useTranslation();
+  
   const handleClose = () => {
     const modalEl = document.getElementById(id);
     if (!modalEl) return;
