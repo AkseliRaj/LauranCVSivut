@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/about.css';
 import { Link } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
+import { useLazyLoadImage } from '../hooks/useLazyLoadImage';
 
 import profilePicture from '../assets/webp/profilePicture.webp';
 import lampIcon from '../assets/svg/lamp.svg';
@@ -9,6 +10,7 @@ import locationIcon from '../assets/svg/location.svg';
 
 export default function About() {
     const { t, i18n } = useTranslation();
+    const { isLoaded, onLoad } = useLazyLoadImage();
 
     const toggleLanguage = () => {
         const newLang = i18n.language === 'en' ? 'fi' : 'en';
@@ -35,9 +37,11 @@ export default function About() {
                         {/* LEFT: IMAGE */}
                         <div className="col-5">
                             <img
-                                className="profilePicture img-fluid"
+                                className={`profilePicture img-fluid ${isLoaded ? 'profilePicture--loaded' : ''}`}
                                 src={profilePicture}
                                 alt="Profile picture"
+                                loading="lazy"
+                                onLoad={onLoad}
                             />
                         </div>
 
@@ -128,9 +132,11 @@ export default function About() {
                         {/* IMAGE */}
                         <div className="col-12 pt-5">
                             <img
-                                className="profilePicture img-fluid"
+                                className={`profilePicture img-fluid ${isLoaded ? 'profilePicture--loaded' : ''}`}
                                 src={profilePicture}
                                 alt="Profile picture"
+                                loading="lazy"
+                                onLoad={onLoad}
                             />
                         </div>
 

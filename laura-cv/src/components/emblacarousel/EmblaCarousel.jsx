@@ -9,6 +9,7 @@ import {
   useSelectedSnapDisplay
 } from './EmblaCarouselSelectedSnapDisplay'
 import useEmblaCarousel from 'embla-carousel-react'
+import LazyImage from '../LazyImage'
 
 const EmblaCarousel = (props) => {
   const { slides, options } = props
@@ -30,10 +31,11 @@ const EmblaCarousel = (props) => {
           {slides.map((slide, index) => (
             <div className="embla__slide" key={index}>
               {typeof slide === 'string' ? (
-                <img 
-                  src={slide} 
+                <LazyImage
+                  src={slide}
                   alt={`Slide ${index + 1}`}
                   className="embla__slide__img"
+                  loadedClassName="embla__slide__img--loaded"
                 />
               ) : (
                 <div className="embla__slide__number">{index + 1}</div>

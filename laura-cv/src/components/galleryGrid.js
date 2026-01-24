@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/galleryGrid.css";
 import { Link } from "react-router-dom";
+import LazyImage from "./LazyImage";
 
 const items = [
   {
@@ -45,7 +46,12 @@ export default function GalleryGrid() {
             className="col-6 col-lg-4"
           >
             <Link to="/GalleryItemPage" className="gallery-tile">
-              <img className="gallery-img" src={item.src} alt={item.title} />
+              <LazyImage
+                className="gallery-img"
+                loadedClassName="gallery-img--loaded"
+                src={item.src}
+                alt={item.title}
+              />
               <div className="gallery-overlay" aria-hidden="true">
                 <div className="gallery-overlay-inner">
                   <div className="gallery-title">{item.title}</div>
