@@ -19,6 +19,8 @@ export default function GalleryItemPage() {
         "https://picsum.photos/id/1025/800/600"
     ];
 
+    const originalPhotographer = ["Aatu Nurminen"];
+
     const carouselOptions = { dragFree: true, loop: false };
 
     return (
@@ -49,7 +51,7 @@ export default function GalleryItemPage() {
             {/* Image carousel */}
             <div className="row justify-content-center pb-4 pb-md-5">
                 <div className="col-11">
-                    <EmblaCarousel slides={sampleImages} options={carouselOptions} />
+                    <EmblaCarousel slides={sampleImages} options={carouselOptions} photographers={originalPhotographer} />
                 </div>
             </div>
 

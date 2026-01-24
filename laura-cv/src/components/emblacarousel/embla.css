@@ -92,4 +92,84 @@
     color: var(--text-low-contrast);
     font-weight: 600;
   }
-  
+
+  /* Clickable image wrap for lightbox */
+  .embla__slide__img-wrap {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    font: inherit;
+  }
+
+  /* Lightbox */
+  .embla__lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  .embla__lightbox__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+  }
+
+  .embla__lightbox__content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .embla__lightbox__img {
+    max-width: 100%;
+    max-height: calc(90vh - 4rem);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .embla__lightbox__photographer {
+    margin: 0;
+    color: var(--text-body, #fff);
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .embla__lightbox__close {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0.9;
+    z-index: 10000;
+  }
+
+  .embla__lightbox__close:hover {
+    opacity: 1;
+  }
