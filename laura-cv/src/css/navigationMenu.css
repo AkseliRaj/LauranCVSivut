@@ -16,6 +16,22 @@
   margin: 0px
 }
 
+/* Stack "currently here" under the h1 on smaller screens.
+   Higher specificity (.menuContainer .menuLink) overrides Bootstrap's
+   align-items-center and justify-content-between on the same element. */
+@media (max-width: 767.98px) {
+  .menuContainer .menuLink {
+    flex-direction: column !important; 
+    align-items: flex-start !important;
+    justify-content: center !important;
+  }
+
+  .menuContainer .menuLink .siteLocationText {
+    padding-inline-start: 1.5rem; /* align with h1's ps-4 */
+    margin-top: 0.35rem;
+  }
+}
+
 .language-toggle {
   max-height: 100%;
   padding: 0.2rem 0.5rem;
