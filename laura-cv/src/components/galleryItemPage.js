@@ -1,27 +1,22 @@
-import react from "react";
-import "../css/galleryItemPage.css"
+import React from "react";
+import "../css/galleryItemPage.css";
 import backArrowIcon from "../assets/svg/backArrow.svg";
-import { Link } from "react-router-dom";
+import { Link, useParams, Navigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import EmblaCarousel from "./emblacarousel/EmblaCarousel";
 import "./emblacarousel/embla.css";
+import { getProjectBySlug } from "../projects/projects";
+
+const carouselOptions = { dragFree: true, loop: false };
 
 export default function GalleryItemPage() {
-    const { t, i18n } = useTranslation();
-    
-    // Sample images for the carousel
-    const sampleImages = [
-        "https://picsum.photos/id/1011/800/600",
-        "https://picsum.photos/id/1015/800/600",
-        "https://picsum.photos/id/1018/800/600",
-        "https://picsum.photos/id/1020/800/600",
-        "https://picsum.photos/id/1022/800/600",
-        "https://picsum.photos/id/1025/800/600"
-    ];
+    const { t } = useTranslation();
+    const { projectSlug } = useParams();
+    const project = getProjectBySlug(projectSlug);
 
-    const originalPhotographer = ["Aatu Nurminen"];
-
-    const carouselOptions = { dragFree: true, loop: false };
+    if (!project) {
+        return <Navigate to="/gallery" replace />;
+    }
 
     return (
         <div className="galleryItemContainer container-fluid">
@@ -43,60 +38,66 @@ export default function GalleryItemPage() {
                             </div>
                         </div>
                     </Link>
-                    <h1 className="pb-1 pb-md-3">Maranasati</h1>
-                    <p>2.4.2025 - 17.5.2025</p>
+                    <h1 className="pb-1 pb-md-3">{project.title}</h1>
+                    {project.date && <p>{project.date}</p>}
                 </div>
             </div>
 
             {/* Image carousel */}
             <div className="row justify-content-center pb-4 pb-md-5">
                 <div className="col-11">
-                    <EmblaCarousel slides={sampleImages} options={carouselOptions} photographers={originalPhotographer} />
+                    <EmblaCarousel
+                        slides={project.images}
+                        options={carouselOptions}
+                        photographers={project.photographers}
+                    />
                 </div>
             </div>
 
             <div className="row justify-content-center">
                 <div className="descriptionSection col-11">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    <p>
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                    <p>
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
+                    {project.description.map((paragraph, i) => (
+                        <p key={i}>{paragraph}</p>
+                    ))}
                 </div>
             </div>
 
-            <div className="row justify-content-center">
-                <div className="creditsHeader col-11 pb-3 pb-md-4 pb-lg-5">
-                    <h1>{t("credits")}</h1>
+            {project.credits.length > 0 && (
+                <div className="row justify-content-center">
+                    <div className="creditsHeader col-11 pb-3 pb-md-4 pb-lg-5">
+                        <h1>{t("credits")}</h1>
+                    </div>
+                    <div className="creditsSection col-11">
+                        <ul>
+                            {project.credits.map((c, i) => (
+                                <li key={i}><span>{c.label}:</span> {c.names}</li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
-                <div className="creditsSection col-11">
-                    <ul>
-                        <li><span>Konsepti:</span> Joel Härkönen, Kalle Nurminen, Veli-Ville Sivén</li>
-                        <li><span>Ohjaus:</span> Joel Härkönen</li>
-                        <li><span>Lavastus:</span> Kalle Nurminen</li>
-                        <li><span>Musiikin sävellys ja sovitus:</span> Veli-Ville Sivén ja työhryhmä</li>
-                        <li><span>Äänisuunnittelu:</span> Veli-Ville Sivén</li>
-                        <li><span>Maskeeraus ja kampaussuunnittelu:</span> Veera Anttila</li>
-                        <li><span>Valosuunnittelu:</span> Aarne Turunen</li>
-                        <li><span>Sirkuskonsultit:</span> Jenni Lehtinen ja Sasu Peistola</li>
-                    </ul>
-                </div>
-            </div>
+            )}
 
-            <div className="row justify-content-center">
-                <div className="linksHeader col-11 pb-3 pb-md-5">
-                    <h1>{t("usefulLinks")}</h1>
+            {project.links.length > 0 && (
+                <div className="row justify-content-center">
+                    <div className="linksHeader col-11 pb-3 pb-md-5">
+                        <h1>{t("usefulLinks")}</h1>
+                    </div>
+                    <div className="linksSection col-11">
+                        {project.links.map((link, i) => (
+                            <a
+                                key={i}
+                                className="link-opacity-80-hover d-block mb-2"
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {link.label || link.url}
+                            </a>
+                        ))}
+                    </div>
                 </div>
-                <div className="linksSection col-11">
-                    <a className="link-opacity-80-hover" href="https://teatteri.ouka.fi/naytelma/post-kabaree/" target='_blank' rel="noopener noreferrer">https://teatteri.ouka.fi/naytelma/post-kabaree/</a>
-                </div>
-            </div>
+            )}
 
         </div>
-    )
-
+    );
 }

@@ -55,7 +55,7 @@ function AppRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/GalleryItemPage" element={<GalleryItemPage />} />
+        <Route path="/gallery/:projectSlug" element={<GalleryItemPage />} />
       </Routes>
     </div>
   );
