@@ -7,6 +7,10 @@
   background: #000;
   text-decoration: none;
   aspect-ratio: 1 / 1;       /* square */
+  /* Performance optimizations for smooth scrolling */
+  transform: translateZ(0);
+  will-change: transform;
+  contain: layout style paint;
 }
 
 /* Lazy-loading: start hidden, fade in when loaded */
@@ -17,6 +21,10 @@
   display: block;
   opacity: 0;
   transition: opacity 0.5s ease-out;
+  /* Performance optimizations */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 .gallery-img--loaded {
   opacity: 1;
@@ -31,6 +39,10 @@
   opacity: 0;
   transition: opacity 180ms ease;
   background: rgba(0, 0, 0, 0.92);
+  /* Performance optimizations */
+  transform: translateZ(0);
+  will-change: opacity;
+  pointer-events: none;
 }
 
 .gallery-overlay-inner {

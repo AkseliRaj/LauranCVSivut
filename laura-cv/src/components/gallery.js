@@ -25,11 +25,6 @@ export default function Gallery() {
                     </div>
 
                     {/* GALLERY ITEMS */}
-                    <div className='row'>
-                        <div className='col galleryItem'>
-                            <h1 className='pb-4 pb-md-5'>2025</h1>
-                        </div>
-                    </div>
                     <div className='row galleryItemRow'>
                         <div className='col'>
                             <GalleryGrid />
