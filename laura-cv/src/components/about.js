@@ -3,10 +3,12 @@ import '../css/about.css';
 import { Link } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import { useLazyLoadImage } from '../hooks/useLazyLoadImage';
+import Typewriter from 'typewriter-effect';
 
 import profilePicture from '../assets/webp/profilePicture.webp';
 import lampIcon from '../assets/svg/lamp.svg';
 import locationIcon from '../assets/svg/location.svg';
+import dinoSpeechIcon from '../assets/svg/dinoSpeech.svg';
 
 export default function About() {
     const { t, i18n } = useTranslation();
@@ -16,6 +18,15 @@ export default function About() {
         const newLang = i18n.language === 'en' ? 'fi' : 'en';
         i18n.changeLanguage(newLang);
     };
+
+    // Typewriter sentences with translations
+    const typewriterStrings = [
+        t('typewriter.interested'),
+        t('typewriter.lookingFor'),
+        t('typewriter.needSolutions'),
+        t('typewriter.createTogether'),
+        t('typewriter.illuminateProject')
+    ];
 
     return (
         <div className="about-container container-fluid">
@@ -150,7 +161,32 @@ export default function About() {
             <div className="row justify-content-center align-items-center bioSection">
                 <div className="col-11">
                     <div className="bioBorder p-lg-5 p-4">
-                        <h1 className="pb-lg-4 pb-md-2">BIO</h1>
+                        <div className="row align-items-center pb-lg-4 pb-md-2">
+                            <div className="col-auto">
+                                <h1 className="m-0">BIO</h1>
+                            </div>
+                            <div className="col d-flex justify-content-end align-items-center">
+                                <div className="creaditsHeader align-items-end gap-4 d-none d-md-flex">
+                                    <h1 className="galleryContactLinkHeader m-0 text-end">
+                                        <Typewriter
+                                            key={i18n.language}
+                                            options={{
+                                                strings: typewriterStrings,
+                                                autoStart: true,
+                                                loop: true,
+                                                delay: 50,
+                                                deleteSpeed: 30,
+                                            }}
+                                        />
+                                    </h1>
+                                    <img
+                                        src={dinoSpeechIcon}
+                                        alt="Dino icon"
+                                        className="bio-dino-speech-icon d-none d-md-block m-0"
+                                    />
+                                </div>
+                            </div>
+                        </div>
                         <p>
                             {t('I am lighting designer')}
                         </p>

@@ -11,6 +11,13 @@
      border: .4rem solid white;
 }
 
+.bio-dino-speech-icon{
+     width: 11rem;
+     height: auto;
+     -webkit-transform: scaleX(-1);
+     transform: scaleX(-1);
+}
+
 .nameHeading {
      font-size: clamp(3.6rem, 10vw, 15rem);
      letter-spacing: clamp(.3rem, 1vw, 5rem);
