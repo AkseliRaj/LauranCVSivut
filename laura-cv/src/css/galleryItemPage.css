@@ -12,8 +12,16 @@ span{
 }
 
 .linksSection a{
-        text-decoration: underline;
+    text-decoration: underline;
     text-underline-offset: clamp(5px, .1vw, 30px);
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: normal;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
 }
 
 .backArrow-icon {
@@ -49,4 +57,17 @@ span{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.galleryItemContainer h1 {
+    font-size: clamp(2rem, 8vw, 15rem);
+    letter-spacing: .2rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: normal;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
 }

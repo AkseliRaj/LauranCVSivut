@@ -25,7 +25,7 @@ export default function GalleryItemPage() {
             <div className="row justify-content-center">
                 <div className="headerSection col-11">
                     <Link to="/gallery">
-                        <div className="row backButton pb-3 pb-md-4">
+                        <div className="row backButton pb-4 pb-md-5">
                             <div className="col-auto d-flex align-items-center">
                                 <img
                                     src={backArrowIcon}
@@ -38,7 +38,7 @@ export default function GalleryItemPage() {
                             </div>
                         </div>
                     </Link>
-                    <h1 className="pb-1 pb-md-3">{project.title}</h1>
+                    <h1 className="pb-1 pb-4 pb-md-5">{project.title}</h1>
                     {project.date && <p>{project.date}</p>}
                 </div>
             </div>

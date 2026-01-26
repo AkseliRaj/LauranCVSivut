@@ -152,10 +152,13 @@ export default function About() {
                     <div className="bioBorder p-lg-5 p-4">
                         <h1 className="pb-lg-4 pb-md-2">BIO</h1>
                         <p>
-                            {t('lorem ipsum')}
+                            {t('I am lighting designer')}
                         </p>
                         <p>
-                            {t('duis aute')}
+                            {t('My background')}
+                        </p>
+                        <p>
+                            {t('I have foundational skills')}
                         </p>
                         <div className="pt-4 d-sm-none">
                             <Link to="/contact" >

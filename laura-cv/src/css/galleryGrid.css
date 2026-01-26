@@ -1,7 +1,7 @@
 .gallery-tile {
   display: block;
   position: relative;
-  border: .7vh solid white;
+  border: .4vh solid white;
   border-radius: 0;
   overflow: hidden;
   background: #000;
