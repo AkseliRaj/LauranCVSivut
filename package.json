@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "firebase": "^12.8.0",
     "i18next": "^25.7.3",
     "react-i18next": "^16.5.1",
     "typewriter-effect": "^2.22.0"

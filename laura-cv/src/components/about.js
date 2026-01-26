@@ -165,9 +165,9 @@ export default function About() {
                             <div className="col-auto">
                                 <h1 className="m-0">BIO</h1>
                             </div>
-                            <div className="col d-flex justify-content-end align-items-center">
-                                <div className="creaditsHeader align-items-end gap-4 d-none d-md-flex">
-                                    <h1 className="galleryContactLinkHeader m-0 text-end">
+                            <div className="col d-flex align-items-center justify-content-end">
+                                <div className="creaditsHeader align-items-center gap-4 d-none d-md-flex">
+                                    <p className="typeWriterText m-0 text-end">
                                         <Typewriter
                                             key={i18n.language}
                                             options={{
@@ -178,7 +178,7 @@ export default function About() {
                                                 deleteSpeed: 30,
                                             }}
                                         />
-                                    </h1>
+                                    </p>
                                     <img
                                         src={dinoSpeechIcon}
                                         alt="Dino icon"

@@ -12,10 +12,14 @@
 }
 
 .bio-dino-speech-icon{
-     width: 11rem;
+     width: 9rem;
      height: auto;
      -webkit-transform: scaleX(-1);
      transform: scaleX(-1);
+}
+
+.typeWriterText {
+     font-size: clamp(.8rem, 1.5vw, 2.5rem);
 }
 
 .nameHeading {
