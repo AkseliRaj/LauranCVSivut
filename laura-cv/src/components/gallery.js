@@ -40,7 +40,7 @@ export default function Gallery() {
                             />
                         </div>
 
-                        <div className="col-12 col-md-10 d-flex align-items-center">
+                        <div className="col-12 col-md-10 d-none d-md-flex align-items-center">
                             <h1 className="galleryContactLinkHeader m-0">
                                 {t('Intrested?')}{' '}
                                 <Link to="/contact" className="galleryContactLink">
@@ -50,6 +50,20 @@ export default function Gallery() {
                         </div>
                     </div>
 
+                    <div className="row d-flex d-md-none pt-4 pt-md-5">
+                        <div className="col-12">
+                            <h1 className="galleryContactLinkHeaderPhone pb-4 pb-md-5">
+                                {t('IntrestedSmallScreenHeader')}
+                            </h1>
+                        </div>
+                        <div className="col-12">
+                            <p>{t('IntrestedSmallScreenText')}
+                                <Link to="/contact" className='contactPageLink'>
+                                    {t('here')}
+                                </Link>
+                            </p>
+                        </div>
+                    </div>
 
                 </div>
             </div>

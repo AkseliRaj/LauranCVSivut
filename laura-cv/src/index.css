@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -10,7 +11,10 @@ html {
   scrollbar-gutter: stable;
 }
 
-body, a, input, textarea {
+body,
+a,
+input,
+textarea {
   margin: 0;
   margin-bottom: 0;
   font-family: 'Space Mono', monospace;
@@ -22,7 +26,8 @@ body, a, input, textarea {
   text-decoration: none;
 }
 
-.contactForm input.form-control, .contactForm textarea.form-control  {
+.contactForm input.form-control,
+.contactForm textarea.form-control {
   font-size: clamp(.8rem, 1.2vw, 2.5rem);
 }
 
@@ -31,13 +36,27 @@ code {
     monospace;
 }
 
-h1, h2, h3, h4, h5, h6, .galleryLink {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.galleryLink {
   color: white;
   font-family: 'DotGothic16', sans-serif;
-  letter-spacing: .5rem;
+  letter-spacing: .1rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: normal;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
-h1, .galleryLink {
+h1,
+.galleryLink {
   font-size: clamp(3rem, 8vw, 15rem);
 }
 
@@ -76,23 +95,23 @@ img {
 .btn-primary:active:focus,
 .btn-primary.active,
 .btn-primary.active:focus {
-    background-color: #000000 !important;
-    color: #ffffff !important;
-    border-color: #ffffff !important;
-    box-shadow: none !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  box-shadow: none !important;
 }
 
 .btn-primary:focus {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border-color: transparent !important;
-    box-shadow: none !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 
 ul {
-    list-style-type: none;
-    padding-left: 0px;
-    margin-left: 0px;
+  list-style-type: none;
+  padding-left: 0px;
+  margin-left: 0px;
 }
 
 li {

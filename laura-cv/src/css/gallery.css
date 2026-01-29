@@ -3,16 +3,26 @@
     padding-top: clamp(2rem, 4vw, 9rem);
 }
 
-.galleryHeader, .galleryItemRow {
+.galleryHeader,
+.galleryItemRow {
     padding-bottom: clamp(2rem, 7vw, 9rem);
 }
 
-.galleryContactLink {
-     text-decoration: underline;
-     text-underline-offset: clamp(15px, 2vw, 30px);
+.contactPageLink {
+    text-decoration: underline;
 }
 
-.galleryContactLink, .galleryContactLinkHeader {
-     font-size: clamp(.8rem, 2.5vw, 5rem) !important;
-     letter-spacing: clamp(.2rem, .3vw, 1rem) !important;
+.galleryContactLink {
+    text-decoration: underline;
+    text-underline-offset: clamp(15px, 2vw, 30px);
+}
+
+.galleryContactLink,
+.galleryContactLinkHeader {
+    font-size: clamp(.8rem, 2.5vw, 5rem);
+    letter-spacing: clamp(.2rem, .3vw, 1rem); 
+}
+
+.galleryContactLinkHeaderPhone {
+    font-size: clamp(2.5rem, 8vw, 15rem);
 }

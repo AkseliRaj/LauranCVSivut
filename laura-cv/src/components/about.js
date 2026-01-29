@@ -23,9 +23,9 @@ export default function About() {
     const typewriterStrings = [
         t('typewriter.interested'),
         t('typewriter.lookingFor'),
-        t('typewriter.needSolutions'),
         t('typewriter.createTogether'),
-        t('typewriter.illuminateProject')
+        t('typewriter.illuminateProject'),
+        t('typewriter.needSolutions')
     ];
 
     return (
