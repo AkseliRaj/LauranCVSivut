@@ -163,7 +163,7 @@ export default function About() {
                     <div className="bioBorder p-lg-5 p-4">
                         <div className="row align-items-center pb-lg-4 pb-md-2">
                             <div className="col-auto">
-                                <h1 className="m-0">BIO</h1>
+                                <h1 className="pb-4 m-0">BIO</h1>
                             </div>
                             <div className="col d-flex align-items-center justify-content-end">
                                 <div className="creaditsHeader align-items-center gap-4 d-none d-md-flex">

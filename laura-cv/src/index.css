@@ -99,34 +99,17 @@ li {
   padding-bottom: 1rem;
 }
 
-/* Custom white scrollbar - blocky design with no rounded edges */
-/* Webkit browsers (Chrome, Edge, Safari) */
+/* Chrome, Edge, Safari */
 ::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: #000000;
-    border: none;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #ffffff;
-    border: none;
-    border-radius: 0;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #ffffff;
-}
-
-::-webkit-scrollbar-corner {
-    background: #000000;
+  display: none;
 }
 
 /* Firefox */
 * {
-    scrollbar-width: thin;
-    scrollbar-color: #ffffff #000000;
+  scrollbar-width: none;
+}
+
+/* IE 10+ */
+* {
+  -ms-overflow-style: none;
 }
