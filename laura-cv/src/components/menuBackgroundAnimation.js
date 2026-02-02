@@ -15,12 +15,33 @@ export default function MenuBackgroundAnimation() {
     const ctx = canvas.getContext("2d");
     isMountedRef.current = true;
 
+    let nt = 0;
+    let params = {
+      noiseSpeed: 0.0075,
+      noiseScale: 500,
+      dotSize: 15,
+      gap: 4,
+      hueBase: 0,
+      hueRange: 0,
+      shape: 0,
+    };
+
+    const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+
     const resize = () => {
       if (!isMountedRef.current || !canvas) return;
       const container = canvas.parentElement;
       if (container) {
         canvas.width = container.clientWidth;
         canvas.height = container.clientHeight;
+
+        // Scale based on available width (CSS px).
+        // 360px -> smaller grid + smaller noise blobs, 1200px+ -> original.
+        const w = container.clientWidth || window.innerWidth || 1200;
+        const t = clamp((w - 360) / (1200 - 360), 0, 1);
+        params.dotSize = Math.round(10 + (15 - 10) * t); // 7..15
+        params.gap = Math.round(2 + (4 - 2) * t); // 1..4
+        params.noiseScale = Math.round(260 + (500 - 260) * t); // 260..500 (smaller => smaller blobs)
       }
     };
     
@@ -36,17 +57,6 @@ export default function MenuBackgroundAnimation() {
     if (container) {
       resizeObserver.observe(container);
     }
-
-    let nt = 0;
-    let params = {
-      noiseSpeed: 0.0075,
-      noiseScale: 500,
-      dotSize: 15,
-      gap: 4,
-      hueBase: 0,
-      hueRange: 0,
-      shape: 0,
-    };
 
     function lerp(x1, x2, n) {
       return (1 - n) * x1 + n * x2;
