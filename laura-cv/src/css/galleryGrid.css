@@ -57,6 +57,12 @@
   font-weight: 500;
 }
 
+@media (max-width: 767px) {
+  .gallery-overlay {
+    display: none;
+  }
+}
+
 .gallery-subtitle {
   margin-top: 8px;
   font-size: 0.9rem;
