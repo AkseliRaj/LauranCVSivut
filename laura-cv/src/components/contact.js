@@ -7,8 +7,8 @@ import phoneIcon from '../assets/svg/phone.svg';
 import { ContactForm } from './contactForm.js';
 import ModalPopup from './modalPopup.js';
 
-import cvFinnish from '../assets/pdf/CV_AkseliRajahalmeFinnish.pdf';
-import cvEnglish from '../assets/pdf/CV_AkseliRajahalmeEnglish.pdf';
+import cvFinnish from '../assets/pdf/Laura-Walden-CV-Fin.pdf';
+import cvEnglish from '../assets/pdf/Laura-Walden-CV-Eng.pdf';
 
 import '../css/contact.css';
 
