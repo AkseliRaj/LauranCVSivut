@@ -12,10 +12,10 @@ export const ContactForm = () => {
     e.preventDefault();
 
     emailjs.sendForm(
-      'YOUR_SERVICE_ID',
-      'YOUR_TEMPLATE_ID',
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
       form.current,
-      { publicKey: 'YOUR_PUBLIC_KEY' }
+      { publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY }
     ).then(
       () => console.log('SUCCESS!'),
       (error) => console.log('FAILED...', error.text)
